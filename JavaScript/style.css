@@ -1,0 +1,16 @@
+﻿body {
+}
+
+#getval {
+    width: 80px;
+    height: 28px;
+    border: 1px solid #0094ff;
+    background: #0094ff;
+    color: #fff;
+    border-radius: 3px;
+    outline: 0;
+}
+
+#getval:hover {
+    background: #78c6ff;
+}

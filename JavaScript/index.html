@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery</title>
+	<meta charset="utf-8" />
+    <link href="style.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        input[type=text] {
+            width: 140px;
+            height: 25px;
+            padding-left: 6px;
+            font-family: Arial, Helvetica, sans-serif;
+            border: 1px solid #a4a4a4;
+            border-radius: 3px;
+            outline: 0;
+            color: #333;
+        }
+
+            input[type=text]:hover {
+                border: 1px solid #626262;
+            }
+
+            input[type=text]:focus {
+                border: 1px solid #56a5f1;
+            }
+
+            iframe {
+                width: 650px;
+                height: 380px;
+                border: 0;
+            }
+
+            .fadebox1 {
+                width: 250px;
+                height: 140px;
+                background: red;
+                margin-top: 10px; 
+                /*display: none;*/
+            }
+
+            .fadebox2 {
+                width: 250px;
+                height: 140px;
+                background: blue; 
+                margin-top: 10px;
+                /*display: none;*/
+            }
+
+            .fadebox3 {
+                width: 250px;
+                height: 140px;
+                background: green; 
+                margin-top: 10px;
+                /*display: none;*/
+            }
+
+            #slide {
+                padding: 5px;
+                border: 1px solid blue;
+                background: #56a5f1;
+                text-align: center;
+                color: #fff;
+                cursor: pointer;
+                margin: 0 auto;
+                width: 500px;
+            }
+
+            #slider {
+                padding: 50px;
+                border: 1px solid blue;
+                background: #56a5f1;
+                text-align: center;
+                color: #fff;
+                cursor: default;
+                margin: 0 auto;
+                width: 410px;
+                display: none;
+            }
+
+            #panel {
+                padding: 5px;
+                border: 1px solid blue;
+                background: #56a5f1;
+                text-align: center;
+                color: #fff;
+                cursor: pointer;
+                margin: 0 auto;
+                width: 500px;
+            }
+
+            #slide3 {
+                padding: 50px;
+                border: 1px solid blue;
+                background: #56a5f1;
+                text-align: center;
+                color: #fff;
+                cursor: default;
+                margin: 0 auto;
+                width: 410px;
+                display: none;
+            }
+    </style>
+    <script src="jQuery.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script type="text/javascript">
+        //$(document).ready(function () {
+        //    $("#btn1").on('click', function () {
+        //        alert("Text: " + $(".text").text());
+        //    });
+        //    $("#btn2").on('click', function () {
+        //        alert("HTML: " + $(".text").html());
+        //    });
+        //});
+
+        //$(document).ready(function () {
+        //    $("#buttonval").on('click', function () {
+        //        alert("Value: " + $("#nameval").val());
+        //    });
+        //});
+        
+        //$(document).ready(function () {
+        //    $(".buttonattr").on('click', function () {
+        //        alert("Link: " + $("#link").attr("href"));
+        //    });
+        //});
+
+        //$(document).ready(function () {
+        //    $("#hide").on('click', function () {
+        //        $("#para1").hide();
+        //    });
+        //    $("#show").on('click', function () {
+        //        $("#para1").show();
+        //    });
+        //});
+
+        //$(document).ready(function () {
+        //    $("#toggle").click(function () {
+        //        $("#para2").toggle(500);
+        //    });
+        //});
+
+        //$(document).ready(function () {
+        //    $("#fade").on('click', function () {
+        //        $(".fadebox1").fadeToggle(200);
+        //        $(".fadebox2").fadeToggle(200);
+        //        $(".fadebox3").fadeToggle(200);
+        //    });
+        //});
+
+        //$(document).ready(function () {
+        //    $("#slide").click(function () {
+        //        $("#slider").slideDown(150);
+        //    });
+        //});
+
+        //$(document).ready(function () {
+        //    $("#slide").on('click', function () {
+        //        $("#slider").slideToggle(400);
+        //    });
+        //});
+
+        //$(document).ready(function () {
+        //    $("#panel").on('click', function () {
+        //        $("#slide3").slideToggle(1500);
+        //    });
+        //    $("#stop").on('click', function () {
+        //        $("#slide3").stop();
+        //    });
+        //});
+
+        //$(document).ready(function () {
+        //    $("#getval").on('click', function () {
+        //        alert("Hello: " + $("#textvalue").val());
+        //    });
+        //});
+
+        //$(document).ready(function () {
+        //    $("#text").on('click', function () {
+        //        alert("Text: " + $("#paragraph").text());
+        //    });
+        //    $("#html").on('click', function () {
+        //        alert("HTML: " + $("#paragraph").html());
+        //    });
+        //});
+
+        $(document).ready(function () {
+            $("#settext").on('click', function () {
+                $("#text").text("Hello world!");
+            });
+            $("#sethtml").on('click', function () {
+                $("#html").html("<b>Hello world!</b>");
+            });
+            $("#setvalue").on('click', function () {
+                $("#value").val("Ioan Georgiev");
+            });
+        });
+    </script>
+</head>
+<body>
+    <!--<p class="text">This is some <b>bold</b> text in paragraph.</p>
+
+    <button id="btn1">Show Text</button>
+    <button id="btn2">Show HTML</button>-->
+    <!--<input type="text" name="nameval" id="nameval" placeholder="Name Value" />
+    <input type="button" name="buttonval" id="buttonval" value="submit" />-->
+    <!--<p><a href="https://www.google.com" id="link" target="_blank">google</a></p>
+    <button class="buttonattr">click me</button>-->
+    <!--<p id="para1">If you click on the "Hide" button, i'll disappear.</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>-->
+    <!--<p id="para2">Click on the "Toggle".</p>
+    <button id="toggle">Toggle</button>-->
+    <!--<iframe src="https://www.youtube.com/embed/FkTybqcX-Yo"></iframe>-->
+    <!--<p>Click the button to fade.</p>
+    <button id="fade">Fade</button>
+    <div class="fadebox1"></div>
+    <div class="fadebox2"></div>
+    <div class="fadebox3"></div>-->
+    <!--<div id="slide">Click me to slideDown</div>
+    <div id="slider">I am a slider</div>-->
+    <!--<button id="stop">Stop</button>
+    <div id="panel">Click here to slide down</div>
+    <div id="slide3">I am a slider</div>-->
+    <!--<button id="getval">Get value</button>
+    <input type="text" id="textvalue" placeholder="Name" />-->
+    <!--<p id="paragraph">Hello this is my friend <b>George</b>.Nice to meet you George!</p>
+    <button id="text">Show Text</button>
+    <button id="html">Show HTML</button>-->
+
+    <p id="text">This is a paragraph</p>
+    <p id="html">This is another paragraph</p>
+    <p>Input field: <input type="text" name="text" value="Mickey Mouse" id="value" /></p>
+    <button id="settext">Set text</button>
+    <button id="sethtml">Set html</button>
+    <button id="setvalue">Set value</button>
+</body>
+</html>

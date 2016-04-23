@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Form</title>
+	<meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#anchor").on('click', function (e) {
+                e.preventDefault();
+                $("#form").show()
+                $("#cancel").show();
+                $(this).hide();             
+                });
+                $("#cancel").on('click', function (e) {
+                    e.preventDefault();
+                    $("#form").hide();
+                    $("#anchor").show();
+                    $(this).hide();
+                    });
+                    $("input, textarea").focusin(function () {
+                                    $(this).css('background', '#d2ecff');
+                        });
+            $("input, textarea").focusout(function () {
+                $(this).css('background', '#fff');
+            });
+            $("label").mouseenter(function () {
+                $(this).find("span").css('display', 'block'); 
+            });
+            $("label").mouseout(function () {
+                $(this).find("span").css('display', 'none');
+            });
+        });
+    </script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            overflow-y: scroll;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #form, #cancel {
+            display: none;
+        }   
+
+        table {
+            border-collapse: collapse;
+            border: 1px solid #58b9ff;
+            background: #e8f5ff;
+            color: #2a75aa;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        span {
+            font-size: 13px;
+            font-weight: normal;
+            display: none;
+        }
+
+        table td label {
+            font-weight: bold;
+        }
+
+        #form-button {
+            width: 100px;
+            height: 35px;
+            border: 1px solid #2a75aa;
+            background: #2a75aa;
+            color: #fff;
+            outline: 0;
+        }
+
+        #form-button:hover {
+            background: #549ed3;
+            border: 1px solid #549ed3;
+        }
+
+        input[type=text] {
+            width: 170px;
+            height: 25px;
+            padding-left: 7px;
+            border: 1px solid #58b9ff;
+            outline: 0;
+        }
+
+        textarea {
+            border: 1px solid #58b9ff;
+            outline: 0;
+            resize: vertical;
+        }
+
+        input[type=text]:focus, textarea:focus {
+            border: 1px solid #2a75aa;
+        }
+
+        #hr {
+            border-bottom: 1px solid #2a75aa;;
+        }
+
+        a {
+            margin: 0 auto;
+        }
+
+        #form1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="form1">
+        <a href="#" id="anchor">Нов коментар</a>
+        <a href="#" id="cancel">Откажи</a>
+        <form method="post" name="form" id="form" action="index.html">
+            <table border="0" cellpadding="5" cellspacing="5">
+                <colgroup>
+                    <col width="200" />
+                    <col width="300" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th colspan="2" align="left">Добави коментар</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="button" name="button-form" value="Изпрати" id="form-button" disabled="disabled" />
+                        </td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td colspan="2" align="left" id="hr">
+                            И помнете - "Не хранете троловете"!!!
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <label for="name">Име<span class="small">Вашето име</span></label>
+                        </td>
+                        <td>
+                            <input type="text" name="text" placeholder="Име" id="name" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <label for="post">Поща<span class="small">Валиден email адрес</span></label>
+                        </td>
+                        <td>
+                            <input type="text" name="text" placeholder="Име" id="post" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <label for="massege">Съобщение<span class="small">Наистина, не ги хранете</span></label>
+                        </td>
+                        <td>
+                            <textarea id="massege" cols="30" rows="6"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top"> 
+                            <label for="agree">Съгласен<span class="small">Да ви спамим пощата, с каквото си поискаме</span></label>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="checkbox" placeholder="Име" id="agree" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
